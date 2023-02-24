@@ -1,0 +1,337 @@
+@font-face {
+    font-family: 'TT Firs Neue';
+    src: local('TT Firs Neue Bold'), local('TT-Firs-Neue-Bold'),
+        url('font/TTFirsNeue-Bold.woff2') format('woff2'),
+        url('font/TTFirsNeue-Bold.woff') format('woff'),
+        url('font/TTFirsNeue-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    display: block;
+    text-decoration: none;
+}
+
+body {
+    color: #202020;
+    font-size: 16px;
+    line-height: 22px;
+    font-family: "Roboto";
+    font-weight: 400;
+}
+
+.project {
+    max-width: 1310px;
+    margin: 0 auto;
+    padding: 60px 10px 70px;
+}
+
+.project__title {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+    margin-bottom: 12px;
+}
+
+.grid-container {
+    display: grid;
+    padding: 0px;
+    list-style-type: none;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+}
+
+.small-object {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.middle-object {
+    grid-column: span 3;
+}
+
+.huge-object {
+    grid-column: span 6;
+}
+
+.small-object__image {
+    display: block;
+    margin-bottom: 16px;
+    height: 184px;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.small-object__image-large {
+    display: none;
+}
+
+.small-object__link {
+    display: block;
+    position: relative;
+}
+
+.object-decorate {
+    position: absolute;
+    text-align: center;
+    display: block;
+    line-height: 16px;
+    right: 7px;
+    top: 7px;
+    padding: 6px 14px;
+    background-color: #202020;
+    color: #ffffff;
+
+}
+
+.small-object__text {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 13px;
+}
+
+.date {
+    font-size: 12px;
+    line-height: 22px;
+    color: #999999;
+    display: block;
+    position: relative;
+
+}
+
+.date::before {
+    content: url("images/icon-date.svg");
+    margin-right: 4px;
+}
+
+.middle-object__link {
+    position: relative;
+}
+
+.middle-object__text {
+    margin-bottom: 10px;
+}
+
+.huge-object {
+    position: relative;
+    color: #ffffff;
+    padding-top: 23px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+
+}
+
+.huge-object-date::before {
+    content: url("images/date-icon-light.svg");
+}
+
+.huge-object-date {
+    margin-bottom: 2px;
+}
+
+.huge-object__title {
+    font-family: 'TT Firs Neue';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 6px;
+}
+
+.huge-object__text {
+    max-width: 292px;
+    margin-bottom: 54px;
+}
+
+.first-line {
+    background: url("images/huge-image-1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.second-line {
+    background: url("images/huge-image-2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.huge-object__btn {
+    display: inline-block;
+    padding: 15px 22px;
+    border: 3px #FF6E30 solid;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+@media (max-width: 1024px) {
+    img {
+        width: 100%;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(8, 1fr);
+        gap: 30px;
+        grid-auto-flow: row dense;
+    }
+
+    .grid-container .grid-item:nth-of-type(3) {
+        grid-column: span 4;
+    }
+
+    .grid-container .grid-item:nth-of-type(3) .small-object__image {
+        display: none;
+    }
+
+    .small-object__image-large {
+        display: block;
+        margin-bottom: 18px;
+        height: 184px;
+    }
+
+    .huge-object {
+        grid-column: span 5;
+    }
+
+    .small-object__image {
+
+        object-fit: cover;
+    }
+
+    .grid-container .grid-item:nth-of-type(5) {
+        grid-column: 4/9;
+    }
+}
+
+@media (max-width: 768px) {
+    .project {
+        padding-top:30px;
+    }
+    .grid-container {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .small-object__image-large {
+        display: none;
+    }
+
+    .grid-container .grid-item:nth-of-type(3) .small-object__image {
+        display: block;
+        max-width: 100%;
+    }
+
+    .grid-container .grid-item:nth-of-type(3) {
+        grid-column: span 2;
+    }
+
+    .huge-object {
+        grid-column: 1/-1;
+    }
+
+    .grid-container .grid-item:nth-of-type(5) {
+        grid-column: 1/-1;
+        grid-row: 5/6;
+    }
+}
+
+@media (max-width: 572px) {
+    .object-decorate {
+        padding: 3px 7px;
+    }
+
+    .small-object__text {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+@media (max-width: 492px) {
+    .object-decorate {
+        padding: 3px 7px;
+        font-size: 12px;
+    }
+
+    .small-object__text {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .middle-object__text {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .small-object__image {
+
+        height: 160px;
+    }
+}
+
+@media (max-width: 410px) {
+    .small-object__image {
+
+        height: 130px;
+    }
+}
+
+@media (max-width: 320px) {
+    .object-decorate {
+        padding: 4px 14px;
+        font-size: 12px;
+        line-height: 14px
+    }
+
+    .small-object__text {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .small-object__image {
+        height: 184px;
+    }
+
+    .grid-item {
+        grid-column: 1/-1;
+    }
+
+    .first-line {
+        height: 422px;
+        background: url("images/huge-new.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 140px;
+    }
+    .huge-object-date{
+        color: #ffffff;
+    }
+    .grid-container .grid-item:nth-of-type(5) {
+        grid-column: 1/-1;
+        grid-row: 7/8;
+    }
+    .second-line{
+        height: 422px;
+        background: url("images/huge-new-2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 140px;
+    }
+}
